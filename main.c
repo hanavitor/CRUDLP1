@@ -54,9 +54,48 @@ tTer ter;
 
 FILE *fp, *fp1, *fp2;
 
-int CadastraImovel(){
+void AddCasa(){
 
     fp = fopen("dadoscasa.txt", "a");
+
+    fgets(casa.titulo,100,stdin);
+    casa.titulo[strcspn(casa.titulo, "\n")] = 0;
+    fgets(casa.rua,100,stdin);
+    casa.rua[strcspn(casa.rua, "\n")] = 0;
+    fgets(casa.bairro,100,stdin);
+    casa.bairro[strcspn(casa.bairro, "\n")] = 0;
+    fgets(casa.cep,100,stdin);
+    casa.cep[strcspn(casa.cep, "\n")] = 0;
+    fgets(casa.cidade,100,stdin);
+    casa.cidade[strcspn(casa.cidade, "\n")] = 0;
+    fgets(casa.andares,100,stdin);
+    casa.andares[strcspn(casa.andares, "\n")] = 0;
+    fgets(casa.quartos,100,stdin);
+    casa.quartos[strcspn(casa.quartos, "\n")] = 0;
+    fgets(casa.valor,100,stdin);
+    casa.valor[strcspn(casa.valor, "\n")] = 0;
+    fgets(casa.disp,100,stdin);
+    casa.disp[strcspn(casa.disp, "\n")] = 0;
+    fgets(casa.areater,100,stdin);
+    casa.areater[strcspn(casa.areater, "\n")] = 0;
+    fgets(casa.areacon,100,stdin);
+    casa.areacon[strcspn(casa.areacon, "\n")] = 0;
+    fprintf(fp, "%s\n", casa.titulo);
+    fprintf(fp, "%s\n", casa.rua);
+    fprintf(fp, "%s\n", casa.bairro);
+    fprintf(fp, "%s\n", casa.cep);
+    fprintf(fp, "%s\n", casa.cidade);
+    fprintf(fp, "%s\n", casa.andares);
+    fprintf(fp, "%s\n", casa.quartos);
+    fprintf(fp, "%s\n", casa.valor);
+    fprintf(fp, "%s\n", casa.disp);
+    fprintf(fp, "%s\n", casa.areater);
+    fprintf(fp, "%s\n", casa.areacon);
+
+}
+
+int CadastraImovel(){
+
     fp1 = fopen("dadosapt.txt", "a");
     fp2 = fopen("dadoster.txt", "a");
 
@@ -78,40 +117,8 @@ int CadastraImovel(){
                 return 0;
                 break;
             case 49:
+                AddCasa();
                 system(CLEARTERM);
-                fgets(casa.titulo,100,stdin);
-                casa.titulo[strcspn(casa.titulo, "\n")] = 0;
-                fgets(casa.rua,100,stdin);
-                casa.rua[strcspn(casa.rua, "\n")] = 0;
-                fgets(casa.bairro,100,stdin);
-                casa.bairro[strcspn(casa.bairro, "\n")] = 0;
-                fgets(casa.cep,100,stdin);
-                casa.cep[strcspn(casa.cep, "\n")] = 0;
-                fgets(casa.cidade,100,stdin);
-                casa.cidade[strcspn(casa.cidade, "\n")] = 0;
-                fgets(casa.andares,100,stdin);
-                casa.andares[strcspn(casa.andares, "\n")] = 0;
-                fgets(casa.quartos,100,stdin);
-                casa.quartos[strcspn(casa.quartos, "\n")] = 0;
-                fgets(casa.valor,100,stdin);
-                casa.valor[strcspn(casa.valor, "\n")] = 0;
-                fgets(casa.disp,100,stdin);
-                casa.disp[strcspn(casa.disp, "\n")] = 0;
-                fgets(casa.areater,100,stdin);
-                casa.areater[strcspn(casa.areater, "\n")] = 0;
-                fgets(casa.areacon,100,stdin);
-                casa.areacon[strcspn(casa.areacon, "\n")] = 0;
-                fprintf(fp, "%s\n", casa.titulo);
-                fprintf(fp, "%s\n", casa.rua);
-                fprintf(fp, "%s\n", casa.bairro);
-                fprintf(fp, "%s\n", casa.cep);
-                fprintf(fp, "%s\n", casa.cidade);
-                fprintf(fp, "%s\n", casa.andares);
-                fprintf(fp, "%s\n", casa.quartos);
-                fprintf(fp, "%s\n", casa.valor);
-                fprintf(fp, "%s\n", casa.disp);
-                fprintf(fp, "%s\n", casa.areater);
-                fprintf(fp, "%s\n", casa.areacon);
                 break;
             case 50:
                 system(CLEARTERM);
