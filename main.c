@@ -54,7 +54,7 @@ tTer ter;
 
 FILE *fp, *fp1, *fp2;
 
-void AddCasa(){
+void AppendCasa(){
 
     fp = fopen("dadoscasa.txt", "a");
 
@@ -94,10 +94,84 @@ void AddCasa(){
 
 }
 
-int CadastraImovel(){
+void AppendApt(){
 
     fp1 = fopen("dadosapt.txt", "a");
+
+    fgets(apt.titulo,100,stdin);
+    apt.titulo[strcspn(apt.titulo, "\n")] = 0;
+    fgets(apt.rua,100,stdin);
+    apt.rua[strcspn(apt.rua, "\n")] = 0;
+    fgets(apt.bairro,100,stdin);
+    apt.bairro[strcspn(apt.bairro, "\n")] = 0;
+    fgets(apt.cep,100,stdin);
+    apt.cep[strcspn(apt.cep, "\n")] = 0;
+    fgets(apt.cidade,100,stdin);
+    apt.cidade[strcspn(apt.cidade, "\n")] = 0;
+    fgets(apt.andares,100,stdin);
+    apt.andares[strcspn(apt.andares, "\n")] = 0;
+    fgets(apt.quartos,100,stdin);
+    apt.quartos[strcspn(apt.quartos, "\n")] = 0;
+    fgets(apt.valor,100,stdin);
+    apt.valor[strcspn(apt.valor, "\n")] = 0;
+    fgets(apt.disp,100,stdin);
+    apt.disp[strcspn(apt.disp, "\n")] = 0;
+    fgets(apt.area,100,stdin);
+    apt.area[strcspn(apt.area, "\n")] = 0;
+    fgets(apt.posicao,100,stdin);
+    apt.posicao[strcspn(apt.posicao, "\n")] = 0;
+    fgets(apt.valorcond,100,stdin);
+    apt.valorcond[strcspn(apt.valorcond, "\n")] = 0;
+    fgets(apt.vagas,100,stdin);
+    apt.vagas[strcspn(apt.vagas, "\n")] = 0;
+    fprintf(fp1, "%s\n", apt.titulo);
+    fprintf(fp1, "%s\n", apt.rua);
+    fprintf(fp1, "%s\n", apt.bairro);
+    fprintf(fp1, "%s\n", apt.cep);
+    fprintf(fp1, "%s\n", apt.cidade);
+    fprintf(fp1, "%s\n", apt.andares);
+    fprintf(fp1, "%s\n", apt.quartos);
+    fprintf(fp1, "%s\n", apt.valor);
+    fprintf(fp1, "%s\n", apt.disp);
+    fprintf(fp1, "%s\n", apt.area);
+    fprintf(fp1, "%s\n", apt.posicao);
+    fprintf(fp1, "%s\n", apt.valorcond);
+    fprintf(fp1, "%s\n", apt.vagas);
+
+}
+
+void AppendTer(){
+
     fp2 = fopen("dadoster.txt", "a");
+
+    fgets(ter.titulo,100,stdin);
+    ter.titulo[strcspn(ter.titulo, "\n")] = 0;
+    fgets(ter.rua,100,stdin);
+    ter.rua[strcspn(ter.rua, "\n")] = 0;
+    fgets(ter.bairro,100,stdin);
+    ter.bairro[strcspn(ter.bairro, "\n")] = 0;
+    fgets(ter.cep,100,stdin);
+    ter.cep[strcspn(ter.cep, "\n")] = 0;
+    fgets(ter.cidade,100,stdin);
+    ter.cidade[strcspn(ter.cidade, "\n")] = 0;
+    fgets(ter.area,100,stdin);
+    ter.area[strcspn(ter.area, "\n")] = 0;
+    fgets(ter.valor,100,stdin);
+    ter.valor[strcspn(ter.valor, "\n")] = 0;
+    fgets(ter.disp,100,stdin);
+    ter.disp[strcspn(ter.disp, "\n")] = 0;
+    fprintf(fp2, "%s\n", ter.titulo);
+    fprintf(fp2, "%s\n", ter.rua);
+    fprintf(fp2, "%s\n", ter.bairro);
+    fprintf(fp2, "%s\n", ter.cep);
+    fprintf(fp2, "%s\n", ter.cidade);
+    fprintf(fp2, "%s\n", ter.area);
+    fprintf(fp2, "%s\n", ter.valor);
+    fprintf(fp2, "%s\n", ter.disp);
+
+}
+
+int CadastraImovel(){
 
     char option;
 
@@ -117,76 +191,16 @@ int CadastraImovel(){
                 return 0;
                 break;
             case 49:
-                AddCasa();
                 system(CLEARTERM);
+                AppendCasa();
                 break;
             case 50:
                 system(CLEARTERM);
-                fgets(apt.titulo,100,stdin);
-                apt.titulo[strcspn(apt.titulo, "\n")] = 0;
-                fgets(apt.rua,100,stdin);
-                apt.rua[strcspn(apt.rua, "\n")] = 0;
-                fgets(apt.bairro,100,stdin);
-                apt.bairro[strcspn(apt.bairro, "\n")] = 0;
-                fgets(apt.cep,100,stdin);
-                apt.cep[strcspn(apt.cep, "\n")] = 0;
-                fgets(apt.cidade,100,stdin);
-                apt.cidade[strcspn(apt.cidade, "\n")] = 0;
-                fgets(apt.andares,100,stdin);
-                apt.andares[strcspn(apt.andares, "\n")] = 0;
-                fgets(apt.quartos,100,stdin);
-                apt.quartos[strcspn(apt.quartos, "\n")] = 0;
-                fgets(apt.valor,100,stdin);
-                apt.valor[strcspn(apt.valor, "\n")] = 0;
-                fgets(apt.disp,100,stdin);
-                apt.disp[strcspn(apt.disp, "\n")] = 0;
-                fgets(apt.area,100,stdin);
-                apt.area[strcspn(apt.area, "\n")] = 0;
-                fgets(apt.posicao,100,stdin);
-                apt.posicao[strcspn(apt.posicao, "\n")] = 0;
-                fgets(apt.valorcond,100,stdin);
-                apt.valorcond[strcspn(apt.valorcond, "\n")] = 0;
-                fgets(apt.vagas,100,stdin);
-                apt.vagas[strcspn(apt.vagas, "\n")] = 0;
-                fprintf(fp1, "%s\n", apt.titulo);
-                fprintf(fp1, "%s\n", apt.rua);
-                fprintf(fp1, "%s\n", apt.bairro);
-                fprintf(fp1, "%s\n", apt.cep);
-                fprintf(fp1, "%s\n", apt.cidade);
-                fprintf(fp1, "%s\n", apt.andares);
-                fprintf(fp1, "%s\n", apt.quartos);
-                fprintf(fp1, "%s\n", apt.valor);
-                fprintf(fp1, "%s\n", apt.disp);
-                fprintf(fp1, "%s\n", apt.area);
-                fprintf(fp1, "%s\n", apt.posicao);
-                fprintf(fp1, "%s\n", apt.valorcond);
+                AppendApt();
                 break;
             case 51:
                 system(CLEARTERM);
-                fgets(ter.titulo,100,stdin);
-                ter.titulo[strcspn(ter.titulo, "\n")] = 0;
-                fgets(ter.rua,100,stdin);
-                ter.rua[strcspn(ter.rua, "\n")] = 0;
-                fgets(ter.bairro,100,stdin);
-                ter.bairro[strcspn(ter.bairro, "\n")] = 0;
-                fgets(ter.cep,100,stdin);
-                ter.cep[strcspn(ter.cep, "\n")] = 0;
-                fgets(ter.cidade,100,stdin);
-                ter.cidade[strcspn(ter.cidade, "\n")] = 0;
-                fgets(ter.area,100,stdin);
-                ter.area[strcspn(ter.area, "\n")] = 0;
-                fgets(ter.valor,100,stdin);
-                ter.valor[strcspn(ter.valor, "\n")] = 0;
-                fgets(ter.disp,100,stdin);
-                ter.disp[strcspn(ter.disp, "\n")] = 0;
-                fprintf(fp2, "%s\n", ter.titulo);
-                fprintf(fp2, "%s\n", ter.rua);
-                fprintf(fp2, "%s\n", ter.bairro);
-                fprintf(fp2, "%s\n", ter.cep);
-                fprintf(fp2, "%s\n", ter.cidade);
-                fprintf(fp2, "%s\n", ter.area);
-                fprintf(fp2, "%s\n", ter.valor);
-                fprintf(fp2, "%s\n", ter.disp);
+                AppendTer();
                 break;
             default:
                 system(CLEARTERM);
