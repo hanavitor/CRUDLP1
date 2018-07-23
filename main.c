@@ -73,7 +73,12 @@ int CadastraImovel(){
         getchar();
 
         switch(option){
+            case 48:
+                system(CLEARTERM);
+                return 0;
+                break;
             case 49:
+                system(CLEARTERM);
                 fgets(casa.titulo,100,stdin);
                 casa.titulo[strcspn(casa.titulo, "\n")] = 0;
                 fgets(casa.rua,100,stdin);
@@ -109,6 +114,7 @@ int CadastraImovel(){
                 fprintf(fp, "%s\n", casa.areacon);
                 break;
             case 50:
+                system(CLEARTERM);
                 fgets(apt.titulo,100,stdin);
                 apt.titulo[strcspn(apt.titulo, "\n")] = 0;
                 fgets(apt.rua,100,stdin);
@@ -149,6 +155,7 @@ int CadastraImovel(){
                 fprintf(fp1, "%s\n", apt.valorcond);
                 break;
             case 51:
+                system(CLEARTERM);
                 fgets(ter.titulo,100,stdin);
                 ter.titulo[strcspn(ter.titulo, "\n")] = 0;
                 fgets(ter.rua,100,stdin);
@@ -175,7 +182,8 @@ int CadastraImovel(){
                 fprintf(fp2, "%s\n", ter.disp);
                 break;
             default:
-                return 0;
+                system(CLEARTERM);
+                printf("Erro\n");
                 break;
         }
     }
