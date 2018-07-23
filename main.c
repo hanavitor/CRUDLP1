@@ -1,7 +1,11 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#ifdef WIN32
+#define CLEARTERM "cls"
+#else //LINUX
 #define CLEARTERM "clear"
+#endif
 
 typedef struct Casa{
     char titulo[100];
