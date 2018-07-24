@@ -203,6 +203,63 @@ void AppendTer(){
 
 }
 
+void LerTodoCasa(){
+
+    fp = fopen("dadoscasa.txt", "r");
+    int c = 0;
+
+    printf("\nLista de Casas:\n\n");
+    while((c = fgetc(fp)) != EOF){
+
+        //for(int i = 0;i<11;i++){
+            fgets(casawrite.titulo,100,fp);
+            casawrite.titulo[strcspn(casawrite.titulo, "\n")] = 0;
+            fgets(casawrite.rua,100,fp);
+            casawrite.rua[strcspn(casawrite.rua, "\n")] = 0;
+            fgets(casawrite.bairro,100,fp);
+            casawrite.bairro[strcspn(casawrite.bairro, "\n")] = 0;
+            fgets(casawrite.cep,100,fp);
+            casawrite.cep[strcspn(casawrite.cep, "\n")] = 0;
+            fgets(casawrite.cidade,100,fp);
+            casawrite.cidade[strcspn(casawrite.cidade, "\n")] = 0;
+            fgets(casawrite.andares,100,fp);
+            casawrite.andares[strcspn(casawrite.andares, "\n")] = 0;
+            fgets(casawrite.quartos,100,fp);
+            casawrite.quartos[strcspn(casawrite.quartos, "\n")] = 0;
+            fgets(casawrite.valor,100,fp);
+            casawrite.valor[strcspn(casawrite.valor, "\n")] = 0;
+            fgets(casawrite.disp,100,fp);
+            casawrite.disp[strcspn(casawrite.disp, "\n")] = 0;
+            fgets(casawrite.areater,100,fp);
+            casawrite.areater[strcspn(casawrite.areater, "\n")] = 0;
+            fgets(casawrite.areacon,100,fp);
+            casawrite.areacon[strcspn(casawrite.areacon, "\n")] = 0;
+        //}
+
+        printf("Titulo: %s\n", casawrite.titulo);
+        printf("Rua: %s\n", casawrite.rua);
+        printf("Bairro: %s\n", casawrite.bairro);
+        printf("Cep: %s\n", casawrite.cep);
+        printf("Cidade: %s\n", casawrite.cidade);
+        printf("Andares: %s\n", casawrite.andares);
+        printf("Quartos: %s\n", casawrite.quartos);
+        printf("Valor: %s\n", casawrite.valor);
+        printf("Disponibilidade: %s\n", casawrite.disp);
+        printf("Area do terreno: %s\n", casawrite.areater);
+        printf("Area construida: %s\n", casawrite.areacon);
+
+    }
+
+}
+
+void LerTodoApt(){
+
+}
+
+void LerTodoTer(){
+
+}
+
 int CadastraImovel(){
 
     char option;
@@ -243,6 +300,12 @@ int CadastraImovel(){
 
 }
 
+void ConsultaTodosImoveis(){
+
+    LerTodoCasa();
+
+}
+
 int main(){
 
     system(CLEARTERM);
@@ -276,6 +339,7 @@ int main(){
                 break;
             case 50:
                 system(CLEARTERM);
+                ConsultaTodosImoveis();
                 break;
             case 51:
                 system(CLEARTERM);
