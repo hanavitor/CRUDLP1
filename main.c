@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#ifdef WIN32
+#ifdef WIN32 //WINDOWS
 #define CLEARTERM "cls"
 #else //LINUX
 #define CLEARTERM "clear"
@@ -48,9 +48,9 @@ typedef struct Terreno{
     char disp[100];
 }tTer;
 
-tCasa casa;
-tApt apt;
-tTer ter;
+tCasa casawrite;
+tApt aptwrite;
+tTer terwrite;
 
 FILE *fp, *fp1, *fp2;
 
@@ -58,39 +58,50 @@ void AppendCasa(){
 
     fp = fopen("dadoscasa.txt", "a");
 
-    fgets(casa.titulo,100,stdin);
-    casa.titulo[strcspn(casa.titulo, "\n")] = 0;
-    fgets(casa.rua,100,stdin);
-    casa.rua[strcspn(casa.rua, "\n")] = 0;
-    fgets(casa.bairro,100,stdin);
-    casa.bairro[strcspn(casa.bairro, "\n")] = 0;
-    fgets(casa.cep,100,stdin);
-    casa.cep[strcspn(casa.cep, "\n")] = 0;
-    fgets(casa.cidade,100,stdin);
-    casa.cidade[strcspn(casa.cidade, "\n")] = 0;
-    fgets(casa.andares,100,stdin);
-    casa.andares[strcspn(casa.andares, "\n")] = 0;
-    fgets(casa.quartos,100,stdin);
-    casa.quartos[strcspn(casa.quartos, "\n")] = 0;
-    fgets(casa.valor,100,stdin);
-    casa.valor[strcspn(casa.valor, "\n")] = 0;
-    fgets(casa.disp,100,stdin);
-    casa.disp[strcspn(casa.disp, "\n")] = 0;
-    fgets(casa.areater,100,stdin);
-    casa.areater[strcspn(casa.areater, "\n")] = 0;
-    fgets(casa.areacon,100,stdin);
-    casa.areacon[strcspn(casa.areacon, "\n")] = 0;
-    fprintf(fp, "%s\n", casa.titulo);
-    fprintf(fp, "%s\n", casa.rua);
-    fprintf(fp, "%s\n", casa.bairro);
-    fprintf(fp, "%s\n", casa.cep);
-    fprintf(fp, "%s\n", casa.cidade);
-    fprintf(fp, "%s\n", casa.andares);
-    fprintf(fp, "%s\n", casa.quartos);
-    fprintf(fp, "%s\n", casa.valor);
-    fprintf(fp, "%s\n", casa.disp);
-    fprintf(fp, "%s\n", casa.areater);
-    fprintf(fp, "%s\n", casa.areacon);
+    printf("Insira titulo: ");
+    fgets(casawrite.titulo,100,stdin);
+    casawrite.titulo[strcspn(casawrite.titulo, "\n")] = 0;
+    printf("Insira rua: ");
+    fgets(casawrite.rua,100,stdin);
+    casawrite.rua[strcspn(casawrite.rua, "\n")] = 0;
+    printf("Insira bairro: ");
+    fgets(casawrite.bairro,100,stdin);
+    casawrite.bairro[strcspn(casawrite.bairro, "\n")] = 0;
+    printf("Insira cep: ");
+    fgets(casawrite.cep,100,stdin);
+    casawrite.cep[strcspn(casawrite.cep, "\n")] = 0;
+    printf("Insira cidade: ");
+    fgets(casawrite.cidade,100,stdin);
+    casawrite.cidade[strcspn(casawrite.cidade, "\n")] = 0;
+    printf("Insira andares: ");
+    fgets(casawrite.andares,100,stdin);
+    casawrite.andares[strcspn(casawrite.andares, "\n")] = 0;
+    printf("Insira quartos: ");
+    fgets(casawrite.quartos,100,stdin);
+    casawrite.quartos[strcspn(casawrite.quartos, "\n")] = 0;
+    printf("Insira valor: ");
+    fgets(casawrite.valor,100,stdin);
+    casawrite.valor[strcspn(casawrite.valor, "\n")] = 0;
+    printf("Insira disponibilidade: ");
+    fgets(casawrite.disp,100,stdin);
+    casawrite.disp[strcspn(casawrite.disp, "\n")] = 0;
+    printf("Insira area do terreno: ");
+    fgets(casawrite.areater,100,stdin);
+    casawrite.areater[strcspn(casawrite.areater, "\n")] = 0;
+    printf("Insira area construida: ");
+    fgets(casawrite.areacon,100,stdin);
+    casawrite.areacon[strcspn(casawrite.areacon, "\n")] = 0;
+    fprintf(fp, "%s\n", casawrite.titulo);
+    fprintf(fp, "%s\n", casawrite.rua);
+    fprintf(fp, "%s\n", casawrite.bairro);
+    fprintf(fp, "%s\n", casawrite.cep);
+    fprintf(fp, "%s\n", casawrite.cidade);
+    fprintf(fp, "%s\n", casawrite.andares);
+    fprintf(fp, "%s\n", casawrite.quartos);
+    fprintf(fp, "%s\n", casawrite.valor);
+    fprintf(fp, "%s\n", casawrite.disp);
+    fprintf(fp, "%s\n", casawrite.areater);
+    fprintf(fp, "%s\n", casawrite.areacon);
 
 }
 
@@ -98,45 +109,58 @@ void AppendApt(){
 
     fp1 = fopen("dadosapt.txt", "a");
 
-    fgets(apt.titulo,100,stdin);
-    apt.titulo[strcspn(apt.titulo, "\n")] = 0;
-    fgets(apt.rua,100,stdin);
-    apt.rua[strcspn(apt.rua, "\n")] = 0;
-    fgets(apt.bairro,100,stdin);
-    apt.bairro[strcspn(apt.bairro, "\n")] = 0;
-    fgets(apt.cep,100,stdin);
-    apt.cep[strcspn(apt.cep, "\n")] = 0;
-    fgets(apt.cidade,100,stdin);
-    apt.cidade[strcspn(apt.cidade, "\n")] = 0;
-    fgets(apt.andares,100,stdin);
-    apt.andares[strcspn(apt.andares, "\n")] = 0;
-    fgets(apt.quartos,100,stdin);
-    apt.quartos[strcspn(apt.quartos, "\n")] = 0;
-    fgets(apt.valor,100,stdin);
-    apt.valor[strcspn(apt.valor, "\n")] = 0;
-    fgets(apt.disp,100,stdin);
-    apt.disp[strcspn(apt.disp, "\n")] = 0;
-    fgets(apt.area,100,stdin);
-    apt.area[strcspn(apt.area, "\n")] = 0;
-    fgets(apt.posicao,100,stdin);
-    apt.posicao[strcspn(apt.posicao, "\n")] = 0;
-    fgets(apt.valorcond,100,stdin);
-    apt.valorcond[strcspn(apt.valorcond, "\n")] = 0;
-    fgets(apt.vagas,100,stdin);
-    apt.vagas[strcspn(apt.vagas, "\n")] = 0;
-    fprintf(fp1, "%s\n", apt.titulo);
-    fprintf(fp1, "%s\n", apt.rua);
-    fprintf(fp1, "%s\n", apt.bairro);
-    fprintf(fp1, "%s\n", apt.cep);
-    fprintf(fp1, "%s\n", apt.cidade);
-    fprintf(fp1, "%s\n", apt.andares);
-    fprintf(fp1, "%s\n", apt.quartos);
-    fprintf(fp1, "%s\n", apt.valor);
-    fprintf(fp1, "%s\n", apt.disp);
-    fprintf(fp1, "%s\n", apt.area);
-    fprintf(fp1, "%s\n", apt.posicao);
-    fprintf(fp1, "%s\n", apt.valorcond);
-    fprintf(fp1, "%s\n", apt.vagas);
+    printf("Insira titulo: ");
+    fgets(aptwrite.titulo,100,stdin);
+    aptwrite.titulo[strcspn(aptwrite.titulo, "\n")] = 0;
+    printf("Insira rua: ");
+    fgets(aptwrite.rua,100,stdin);
+    aptwrite.rua[strcspn(aptwrite.rua, "\n")] = 0;
+    printf("Insira bairro: ");
+    fgets(aptwrite.bairro,100,stdin);
+    aptwrite.bairro[strcspn(aptwrite.bairro, "\n")] = 0;
+    printf("Insira cep: ");
+    fgets(aptwrite.cep,100,stdin);
+    aptwrite.cep[strcspn(aptwrite.cep, "\n")] = 0;
+    printf("Insira cidade: ");
+    fgets(aptwrite.cidade,100,stdin);
+    aptwrite.cidade[strcspn(aptwrite.cidade, "\n")] = 0;
+    printf("Insira andar: ");
+    fgets(aptwrite.andares,100,stdin);
+    aptwrite.andares[strcspn(aptwrite.andares, "\n")] = 0;
+    printf("Insira quartos: ");
+    fgets(aptwrite.quartos,100,stdin);
+    aptwrite.quartos[strcspn(aptwrite.quartos, "\n")] = 0;
+    printf("Insira valor: ");
+    fgets(aptwrite.valor,100,stdin);
+    aptwrite.valor[strcspn(aptwrite.valor, "\n")] = 0;
+    printf("Insira disponibilidade: ");
+    fgets(aptwrite.disp,100,stdin);
+    aptwrite.disp[strcspn(aptwrite.disp, "\n")] = 0;
+    printf("Insira area: ");
+    fgets(aptwrite.area,100,stdin);
+    aptwrite.area[strcspn(aptwrite.area, "\n")] = 0;
+    printf("Insira posicao(N,S,L,O): ");
+    fgets(aptwrite.posicao,100,stdin);
+    aptwrite.posicao[strcspn(aptwrite.posicao, "\n")] = 0;
+    printf("Insira valor do condominio: ");
+    fgets(aptwrite.valorcond,100,stdin);
+    aptwrite.valorcond[strcspn(aptwrite.valorcond, "\n")] = 0;
+    printf("Insira vagas de garagem: ");
+    fgets(aptwrite.vagas,100,stdin);
+    aptwrite.vagas[strcspn(aptwrite.vagas, "\n")] = 0;
+    fprintf(fp1, "%s\n", aptwrite.titulo);
+    fprintf(fp1, "%s\n", aptwrite.rua);
+    fprintf(fp1, "%s\n", aptwrite.bairro);
+    fprintf(fp1, "%s\n", aptwrite.cep);
+    fprintf(fp1, "%s\n", aptwrite.cidade);
+    fprintf(fp1, "%s\n", aptwrite.andares);
+    fprintf(fp1, "%s\n", aptwrite.quartos);
+    fprintf(fp1, "%s\n", aptwrite.valor);
+    fprintf(fp1, "%s\n", aptwrite.disp);
+    fprintf(fp1, "%s\n", aptwrite.area);
+    fprintf(fp1, "%s\n", aptwrite.posicao);
+    fprintf(fp1, "%s\n", aptwrite.valorcond);
+    fprintf(fp1, "%s\n", aptwrite.vagas);
 
 }
 
@@ -144,30 +168,38 @@ void AppendTer(){
 
     fp2 = fopen("dadoster.txt", "a");
 
-    fgets(ter.titulo,100,stdin);
-    ter.titulo[strcspn(ter.titulo, "\n")] = 0;
-    fgets(ter.rua,100,stdin);
-    ter.rua[strcspn(ter.rua, "\n")] = 0;
-    fgets(ter.bairro,100,stdin);
-    ter.bairro[strcspn(ter.bairro, "\n")] = 0;
-    fgets(ter.cep,100,stdin);
-    ter.cep[strcspn(ter.cep, "\n")] = 0;
-    fgets(ter.cidade,100,stdin);
-    ter.cidade[strcspn(ter.cidade, "\n")] = 0;
-    fgets(ter.area,100,stdin);
-    ter.area[strcspn(ter.area, "\n")] = 0;
-    fgets(ter.valor,100,stdin);
-    ter.valor[strcspn(ter.valor, "\n")] = 0;
-    fgets(ter.disp,100,stdin);
-    ter.disp[strcspn(ter.disp, "\n")] = 0;
-    fprintf(fp2, "%s\n", ter.titulo);
-    fprintf(fp2, "%s\n", ter.rua);
-    fprintf(fp2, "%s\n", ter.bairro);
-    fprintf(fp2, "%s\n", ter.cep);
-    fprintf(fp2, "%s\n", ter.cidade);
-    fprintf(fp2, "%s\n", ter.area);
-    fprintf(fp2, "%s\n", ter.valor);
-    fprintf(fp2, "%s\n", ter.disp);
+    printf("Insira titulo: ");
+    fgets(terwrite.titulo,100,stdin);
+    terwrite.titulo[strcspn(terwrite.titulo, "\n")] = 0;
+    printf("Insira rua: ");
+    fgets(terwrite.rua,100,stdin);
+    terwrite.rua[strcspn(terwrite.rua, "\n")] = 0;
+    printf("Insira bairro: ");
+    fgets(terwrite.bairro,100,stdin);
+    terwrite.bairro[strcspn(terwrite.bairro, "\n")] = 0;
+    printf("Insira cep: ");
+    fgets(terwrite.cep,100,stdin);
+    terwrite.cep[strcspn(terwrite.cep, "\n")] = 0;
+    printf("Insira cidade: ");
+    fgets(terwrite.cidade,100,stdin);
+    terwrite.cidade[strcspn(terwrite.cidade, "\n")] = 0;
+    printf("Insira area: ");
+    fgets(terwrite.area,100,stdin);
+    terwrite.area[strcspn(terwrite.area, "\n")] = 0;
+    printf("Insira valor: ");
+    fgets(terwrite.valor,100,stdin);
+    terwrite.valor[strcspn(terwrite.valor, "\n")] = 0;
+    printf("Insira disponibilidade: ");
+    fgets(terwrite.disp,100,stdin);
+    terwrite.disp[strcspn(terwrite.disp, "\n")] = 0;
+    fprintf(fp2, "%s\n", terwrite.titulo);
+    fprintf(fp2, "%s\n", terwrite.rua);
+    fprintf(fp2, "%s\n", terwrite.bairro);
+    fprintf(fp2, "%s\n", terwrite.cep);
+    fprintf(fp2, "%s\n", terwrite.cidade);
+    fprintf(fp2, "%s\n", terwrite.area);
+    fprintf(fp2, "%s\n", terwrite.valor);
+    fprintf(fp2, "%s\n", terwrite.disp);
 
 }
 
