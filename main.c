@@ -206,10 +206,10 @@ void AppendTer(){
 void LerTodoCasa(){
 
     fp = fopen("dadoscasa.txt", "r");
-    int c = 0;
+    char buffer[100];
 
-    printf("\nLista de Casas:\n\n");
-    while((c = fgetc(fp)) != EOF){
+    printf("Lista de Casas:\n");
+    while(!feof(fp)){
 
         //for(int i = 0;i<11;i++){
             fgets(casawrite.titulo,100,fp);
@@ -307,7 +307,7 @@ void ConsultaTodosImoveis(){
 }
 
 int main(){
-
+    
     system(CLEARTERM);
 
     int flag = 1;
