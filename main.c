@@ -1213,10 +1213,11 @@ int CadastraImovel(){
 
     while(1){
 
-        printf("1.Casa\n"
+        printf("Digite uma opcao e pressione ENTER\n"
+                "1.Casa\n"
                 "2.Apartamento\n"
                 "3.Terreno\n"
-                "0.Sair\n"
+                "0.Voltar\n"
                 "Opcao: ");
         option = getchar();
         getchar();
@@ -1229,14 +1230,23 @@ int CadastraImovel(){
             case 49:
                 system(CLEARTERM);
                 AppendCasa();
+                printf("Cadastro completo, pressione ENTER para cotinuar");
+                getchar();
+                system(CLEARTERM);
                 break;
             case 50:
                 system(CLEARTERM);
                 AppendApt();
+                printf("Cadastro completo, pressione ENTER para cotinuar");
+                getchar();
+                system(CLEARTERM);
                 break;
             case 51:
                 system(CLEARTERM);
                 AppendTer();
+                printf("Cadastro completo, pressione ENTER para cotinuar");
+                getchar();
+                system(CLEARTERM);
                 break;
             default:
                 system(CLEARTERM);
@@ -1276,10 +1286,11 @@ int CheckVender(){
 
     while(1){
 
-        printf("1.Casa\n"
+        printf("Digite uma opcao e pressione ENTER\n"
+                "1.Casa\n"
                 "2.Apartamento\n"
                 "3.Terreno\n"
-                "0.Sair\n"
+                "0.Voltar\n"
                 "Opcao: ");
         option = getchar();
         getchar();
@@ -1324,10 +1335,11 @@ int CheckAlugar(){
 
     while(1){
 
-        printf("1.Casa\n"
+        printf("Digite uma opcao e pressione ENTER\n"
+                "1.Casa\n"
                 "2.Apartamento\n"
                 "3.Terreno\n"
-                "0.Sair\n"
+                "0.Voltar\n"
                 "Opcao: ");
         option = getchar();
         getchar();
@@ -1419,7 +1431,8 @@ int main(){
 
     while(1){
 
-        printf("1.Cadastrar imovel\n"
+        printf("Digite uma opcao e pressione ENTER\n"
+                "1.Cadastrar imovel\n"
                 "2.Imoveis disponiveis\n"
                 "3.Descricao dos imoveis\n"
                 "4.Imoveis para vender\n"
