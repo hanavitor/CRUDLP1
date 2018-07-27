@@ -55,6 +55,7 @@ tTer terwrite;
 FILE *fp, *fp1, *fp2;
 
 char bairro[100];
+char cidade[100];
 
 void AppendCasa(){
 
@@ -638,20 +639,20 @@ void CheckBairroVenderCasa(){
         casawrite.areacon[strcspn(casawrite.areacon, "\n")] = 0;
 
         if(strcmp(casawrite.bairro,bairro) == 0){
-        if(strcmp(casawrite.disp,"vender") == 0){
-            printf("Titulo: %s\n", casawrite.titulo);
-            printf("Rua: %s\n", casawrite.rua);
-            printf("Bairro: %s\n", casawrite.bairro);
-            printf("Cep: %s\n", casawrite.cep);
-            printf("Cidade: %s\n", casawrite.cidade);
-            printf("Andares: %s\n", casawrite.andares);
-            printf("Quartos: %s\n", casawrite.quartos);
-            printf("Valor: %s\n", casawrite.valor);
-            printf("Disponibilidade: %s\n", casawrite.disp);
-            printf("Area do terreno: %s\n", casawrite.areater);
-            printf("Area construida: %s\n", casawrite.areacon);
-            puts(" ");
-        }
+            if(strcmp(casawrite.disp,"vender") == 0){
+                printf("Titulo: %s\n", casawrite.titulo);
+                printf("Rua: %s\n", casawrite.rua);
+                printf("Bairro: %s\n", casawrite.bairro);
+                printf("Cep: %s\n", casawrite.cep);
+                printf("Cidade: %s\n", casawrite.cidade);
+                printf("Andares: %s\n", casawrite.andares);
+                printf("Quartos: %s\n", casawrite.quartos);
+                printf("Valor: %s\n", casawrite.valor);
+                printf("Disponibilidade: %s\n", casawrite.disp);
+                printf("Area do terreno: %s\n", casawrite.areater);
+                printf("Area construida: %s\n", casawrite.areacon);
+                puts(" ");
+            }
         }
     }
     fclose(fp);
@@ -694,22 +695,22 @@ void CheckBairroVenderApt(){
         aptwrite.vagas[strcspn(aptwrite.vagas, "\n")] = 0;
 
         if(strcmp(aptwrite.bairro,bairro) == 0){
-        if(strcmp(aptwrite.disp,"vender") == 0){
-            printf("Titulo: %s\n", aptwrite.titulo);
-            printf("Rua: %s\n", aptwrite.rua);
-            printf("Bairro: %s\n", aptwrite.bairro);
-            printf("Cep: %s\n", aptwrite.cep);
-            printf("Cidade: %s\n", aptwrite.cidade);
-            printf("Andares: %s\n", aptwrite.andares);
-            printf("Quartos: %s\n", aptwrite.quartos);
-            printf("Valor: %s\n", aptwrite.valor);
-            printf("Disponibilidade: %s\n", aptwrite.disp);
-            printf("Area: %s\n", aptwrite.area);
-            printf("Posicao: %s\n", aptwrite.posicao);
-            printf("Valor do condominio: %s\n", aptwrite.valorcond);
-            printf("Vagas: %s\n", aptwrite.vagas);
-            puts(" ");
-        }
+            if(strcmp(aptwrite.disp,"vender") == 0){
+                printf("Titulo: %s\n", aptwrite.titulo);
+                printf("Rua: %s\n", aptwrite.rua);
+                printf("Bairro: %s\n", aptwrite.bairro);
+                printf("Cep: %s\n", aptwrite.cep);
+                printf("Cidade: %s\n", aptwrite.cidade);
+                printf("Andares: %s\n", aptwrite.andares);
+                printf("Quartos: %s\n", aptwrite.quartos);
+                printf("Valor: %s\n", aptwrite.valor);
+                printf("Disponibilidade: %s\n", aptwrite.disp);
+                printf("Area: %s\n", aptwrite.area);
+                printf("Posicao: %s\n", aptwrite.posicao);
+                printf("Valor do condominio: %s\n", aptwrite.valorcond);
+                printf("Vagas: %s\n", aptwrite.vagas);
+                puts(" ");
+            }
         }
     }
     fclose(fp1);
@@ -742,7 +743,155 @@ void CheckBairroVenderTer(){
         terwrite.disp[strcspn(terwrite.disp, "\n")] = 0;
 
         if(strcmp(terwrite.bairro,bairro) == 0){
-        if(strcmp(terwrite.disp,"vender") == 0){
+            if(strcmp(terwrite.disp,"vender") == 0){
+                printf("Titulo: %s\n", terwrite.titulo);
+                printf("Rua: %s\n", terwrite.rua);
+                printf("Bairro: %s\n", terwrite.bairro);
+                printf("Cep: %s\n", terwrite.cep);
+                printf("Cidade: %s\n", terwrite.cidade);
+                printf("Area: %s\n", terwrite.area);
+                printf("Valor: %s\n", terwrite.valor);
+                printf("Disponibilidade: %s\n", terwrite.disp);
+                puts(" ");
+            }
+        }
+    }
+    fclose(fp2);
+
+}
+
+void CheckCidadeCasa(){
+
+    int c;
+
+    fp = fopen("dadoscasa.txt", "r");
+
+    while((c = fgetc(fp) != EOF)){
+
+        fgets(casawrite.titulo,100,fp);
+        casawrite.titulo[strcspn(casawrite.titulo, "\n")] = 0;
+        fgets(casawrite.rua,100,fp);
+        casawrite.rua[strcspn(casawrite.rua, "\n")] = 0;
+        fgets(casawrite.bairro,100,fp);
+        casawrite.bairro[strcspn(casawrite.bairro, "\n")] = 0;
+        fgets(casawrite.cep,100,fp);
+        casawrite.cep[strcspn(casawrite.cep, "\n")] = 0;
+        fgets(casawrite.cidade,100,fp);
+        casawrite.cidade[strcspn(casawrite.cidade, "\n")] = 0;
+        fgets(casawrite.andares,100,fp);
+        casawrite.andares[strcspn(casawrite.andares, "\n")] = 0;
+        fgets(casawrite.quartos,100,fp);
+        casawrite.quartos[strcspn(casawrite.quartos, "\n")] = 0;
+        fgets(casawrite.valor,100,fp);
+        casawrite.valor[strcspn(casawrite.valor, "\n")] = 0;
+        fgets(casawrite.disp,100,fp);
+        casawrite.disp[strcspn(casawrite.disp, "\n")] = 0;
+        fgets(casawrite.areater,100,fp);
+        casawrite.areater[strcspn(casawrite.areater, "\n")] = 0;
+        fgets(casawrite.areacon,100,fp);
+        casawrite.areacon[strcspn(casawrite.areacon, "\n")] = 0;
+
+        if(strcmp(casawrite.cidade,cidade) == 0){
+            printf("Titulo: %s\n", casawrite.titulo);
+            printf("Rua: %s\n", casawrite.rua);
+            printf("Bairro: %s\n", casawrite.bairro);
+            printf("Cep: %s\n", casawrite.cep);
+            printf("Cidade: %s\n", casawrite.cidade);
+            printf("Andares: %s\n", casawrite.andares);
+            printf("Quartos: %s\n", casawrite.quartos);
+            printf("Valor: %s\n", casawrite.valor);
+            printf("Disponibilidade: %s\n", casawrite.disp);
+            printf("Area do terreno: %s\n", casawrite.areater);
+            printf("Area construida: %s\n", casawrite.areacon);
+            puts(" ");
+        }
+    }
+    fclose(fp);
+
+}
+
+void CheckCidadeApt(){
+
+    int c;
+
+    fp1 = fopen("dadosapt.txt", "r");
+
+    while((c = fgetc(fp1) != EOF)){
+
+        fgets(aptwrite.titulo,100,fp1);
+        aptwrite.titulo[strcspn(aptwrite.titulo, "\n")] = 0;
+        fgets(aptwrite.rua,100,fp1);
+        aptwrite.rua[strcspn(aptwrite.rua, "\n")] = 0;
+        fgets(aptwrite.bairro,100,fp1);
+        aptwrite.bairro[strcspn(aptwrite.bairro, "\n")] = 0;
+        fgets(aptwrite.cep,100,fp1);
+        aptwrite.cep[strcspn(aptwrite.cep, "\n")] = 0;
+        fgets(aptwrite.cidade,100,fp1);
+        aptwrite.cidade[strcspn(aptwrite.cidade, "\n")] = 0;
+        fgets(aptwrite.andares,100,fp1);
+        aptwrite.andares[strcspn(aptwrite.andares, "\n")] = 0;
+        fgets(aptwrite.quartos,100,fp1);
+        aptwrite.quartos[strcspn(aptwrite.quartos, "\n")] = 0;
+        fgets(aptwrite.valor,100,fp1);
+        aptwrite.valor[strcspn(aptwrite.valor, "\n")] = 0;
+        fgets(aptwrite.disp,100,fp1);
+        aptwrite.disp[strcspn(aptwrite.disp, "\n")] = 0;
+        fgets(aptwrite.area,100,fp1);
+        aptwrite.area[strcspn(aptwrite.area, "\n")] = 0;
+        fgets(aptwrite.posicao,100,fp1);
+        aptwrite.posicao[strcspn(aptwrite.posicao, "\n")] = 0;
+        fgets(aptwrite.valorcond,100,fp1);
+        aptwrite.valorcond[strcspn(aptwrite.valorcond, "\n")] = 0;
+        fgets(aptwrite.vagas,100,fp1);
+        aptwrite.vagas[strcspn(aptwrite.vagas, "\n")] = 0;
+
+        if(strcmp(aptwrite.cidade,cidade) == 0){
+            printf("Titulo: %s\n", aptwrite.titulo);
+            printf("Rua: %s\n", aptwrite.rua);
+            printf("Bairro: %s\n", aptwrite.bairro);
+            printf("Cep: %s\n", aptwrite.cep);
+            printf("Cidade: %s\n", aptwrite.cidade);
+            printf("Andares: %s\n", aptwrite.andares);
+            printf("Quartos: %s\n", aptwrite.quartos);
+            printf("Valor: %s\n", aptwrite.valor);
+            printf("Disponibilidade: %s\n", aptwrite.disp);
+            printf("Area: %s\n", aptwrite.area);
+            printf("Posicao: %s\n", aptwrite.posicao);
+            printf("Valor do condominio: %s\n", aptwrite.valorcond);
+            printf("Vagas: %s\n", aptwrite.vagas);
+            puts(" ");
+        }
+    }
+    fclose(fp1);
+
+}
+
+void CheckCidadeTer(){
+
+    int c;
+
+    fp2 = fopen("dadoster.txt", "r");
+
+    while((c = fgetc(fp2) != EOF)){
+
+        fgets(terwrite.titulo,100,fp2);
+        terwrite.titulo[strcspn(terwrite.titulo, "\n")] = 0;
+        fgets(terwrite.rua,100,fp2);
+        terwrite.rua[strcspn(terwrite.rua, "\n")] = 0;
+        fgets(terwrite.bairro,100,fp2);
+        terwrite.bairro[strcspn(terwrite.bairro, "\n")] = 0;
+        fgets(terwrite.cep,100,fp2);
+        terwrite.cep[strcspn(terwrite.cep, "\n")] = 0;
+        fgets(terwrite.cidade,100,fp2);
+        terwrite.cidade[strcspn(terwrite.cidade, "\n")] = 0;
+        fgets(terwrite.area,100,fp2);
+        terwrite.area[strcspn(terwrite.area, "\n")] = 0;
+        fgets(terwrite.valor,100,fp2);
+        terwrite.valor[strcspn(terwrite.valor, "\n")] = 0;
+        fgets(terwrite.disp,100,fp2);
+        terwrite.disp[strcspn(terwrite.disp, "\n")] = 0;
+
+        if(strcmp(terwrite.cidade,cidade) == 0){
             printf("Titulo: %s\n", terwrite.titulo);
             printf("Rua: %s\n", terwrite.rua);
             printf("Bairro: %s\n", terwrite.bairro);
@@ -752,7 +901,6 @@ void CheckBairroVenderTer(){
             printf("Valor: %s\n", terwrite.valor);
             printf("Disponibilidade: %s\n", terwrite.disp);
             puts(" ");
-        }
         }
     }
     fclose(fp2);
@@ -791,20 +939,20 @@ void CheckBairroAlugarCasa(){
         casawrite.areacon[strcspn(casawrite.areacon, "\n")] = 0;
 
         if(strcmp(casawrite.bairro,bairro) == 0){
-        if(strcmp(casawrite.disp,"alugar") == 0){
-            printf("Titulo: %s\n", casawrite.titulo);
-            printf("Rua: %s\n", casawrite.rua);
-            printf("Bairro: %s\n", casawrite.bairro);
-            printf("Cep: %s\n", casawrite.cep);
-            printf("Cidade: %s\n", casawrite.cidade);
-            printf("Andares: %s\n", casawrite.andares);
-            printf("Quartos: %s\n", casawrite.quartos);
-            printf("Valor: %s\n", casawrite.valor);
-            printf("Disponibilidade: %s\n", casawrite.disp);
-            printf("Area do terreno: %s\n", casawrite.areater);
-            printf("Area construida: %s\n", casawrite.areacon);
-            puts(" ");
-        }
+            if(strcmp(casawrite.disp,"alugar") == 0){
+                printf("Titulo: %s\n", casawrite.titulo);
+                printf("Rua: %s\n", casawrite.rua);
+                printf("Bairro: %s\n", casawrite.bairro);
+                printf("Cep: %s\n", casawrite.cep);
+                printf("Cidade: %s\n", casawrite.cidade);
+                printf("Andares: %s\n", casawrite.andares);
+                printf("Quartos: %s\n", casawrite.quartos);
+                printf("Valor: %s\n", casawrite.valor);
+                printf("Disponibilidade: %s\n", casawrite.disp);
+                printf("Area do terreno: %s\n", casawrite.areater);
+                printf("Area construida: %s\n", casawrite.areacon);
+                puts(" ");
+            }
         }
     }
     fclose(fp);
@@ -847,22 +995,22 @@ void CheckBairroAlugarApt(){
         aptwrite.vagas[strcspn(aptwrite.vagas, "\n")] = 0;
 
         if(strcmp(aptwrite.bairro,bairro) == 0){
-        if(strcmp(aptwrite.disp,"alugar") == 0){
-            printf("Titulo: %s\n", aptwrite.titulo);
-            printf("Rua: %s\n", aptwrite.rua);
-            printf("Bairro: %s\n", aptwrite.bairro);
-            printf("Cep: %s\n", aptwrite.cep);
-            printf("Cidade: %s\n", aptwrite.cidade);
-            printf("Andares: %s\n", aptwrite.andares);
-            printf("Quartos: %s\n", aptwrite.quartos);
-            printf("Valor: %s\n", aptwrite.valor);
-            printf("Disponibilidade: %s\n", aptwrite.disp);
-            printf("Area: %s\n", aptwrite.area);
-            printf("Posicao: %s\n", aptwrite.posicao);
-            printf("Valor do condominio: %s\n", aptwrite.valorcond);
-            printf("Vagas: %s\n", aptwrite.vagas);
-            puts(" ");
-        }
+            if(strcmp(aptwrite.disp,"alugar") == 0){
+                printf("Titulo: %s\n", aptwrite.titulo);
+                printf("Rua: %s\n", aptwrite.rua);
+                printf("Bairro: %s\n", aptwrite.bairro);
+                printf("Cep: %s\n", aptwrite.cep);
+                printf("Cidade: %s\n", aptwrite.cidade);
+                printf("Andares: %s\n", aptwrite.andares);
+                printf("Quartos: %s\n", aptwrite.quartos);
+                printf("Valor: %s\n", aptwrite.valor);
+                printf("Disponibilidade: %s\n", aptwrite.disp);
+                printf("Area: %s\n", aptwrite.area);
+                printf("Posicao: %s\n", aptwrite.posicao);
+                printf("Valor do condominio: %s\n", aptwrite.valorcond);
+                printf("Vagas: %s\n", aptwrite.vagas);
+                puts(" ");
+            }
         }
     }
     fclose(fp1);
@@ -895,17 +1043,17 @@ void CheckBairroAlugarTer(){
         terwrite.disp[strcspn(terwrite.disp, "\n")] = 0;
 
         if(strcmp(terwrite.bairro,bairro) == 0){
-        if(strcmp(terwrite.disp,"alugar") == 0){
-            printf("Titulo: %s\n", terwrite.titulo);
-            printf("Rua: %s\n", terwrite.rua);
-            printf("Bairro: %s\n", terwrite.bairro);
-            printf("Cep: %s\n", terwrite.cep);
-            printf("Cidade: %s\n", terwrite.cidade);
-            printf("Area: %s\n", terwrite.area);
-            printf("Valor: %s\n", terwrite.valor);
-            printf("Disponibilidade: %s\n", terwrite.disp);
-            puts(" ");
-        }
+            if(strcmp(terwrite.disp,"alugar") == 0){
+                printf("Titulo: %s\n", terwrite.titulo);
+                printf("Rua: %s\n", terwrite.rua);
+                printf("Bairro: %s\n", terwrite.bairro);
+                printf("Cep: %s\n", terwrite.cep);
+                printf("Cidade: %s\n", terwrite.cidade);
+                printf("Area: %s\n", terwrite.area);
+                printf("Valor: %s\n", terwrite.valor);
+                printf("Disponibilidade: %s\n", terwrite.disp);
+                puts(" ");
+            }
         }
     }
     fclose(fp2);
@@ -1227,9 +1375,9 @@ void CheckVenderPorBairro(){
     CheckBairroVenderCasa();
     CheckBairroVenderApt();
     CheckBairroVenderTer();
-                printf("Pressione ENTER para continuar");
-                getchar();
-                system(CLEARTERM);
+    printf("Pressione ENTER para continuar");
+    getchar();
+    system(CLEARTERM);
 
 }
 
@@ -1242,11 +1390,25 @@ void CheckAlugarPorBairro(){
     CheckBairroAlugarCasa();
     CheckBairroAlugarApt();
     CheckBairroAlugarTer();
-                printf("Pressione ENTER para continuar");
-                getchar();
-                system(CLEARTERM);
+    printf("Pressione ENTER para continuar");
+    getchar();
+    system(CLEARTERM);
 }
 
+void CheckCidade(){
+
+    printf("Insia o nome da cidade: ");
+    fgets(cidade,100,stdin);
+    cidade[strcspn(cidade, "\n")] = 0;
+    system(CLEARTERM);
+    CheckCidadeCasa();
+    CheckCidadeApt();
+    CheckCidadeTer();
+    printf("Pressione ENTER para continuar");
+    getchar();
+    system(CLEARTERM);
+
+}
 
 int main(){
 
@@ -1305,6 +1467,7 @@ int main(){
                 break;  
             case 56:
                 system(CLEARTERM);
+                CheckCidade();
                 break;
             default:
                 system(CLEARTERM);
