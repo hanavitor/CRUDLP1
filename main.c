@@ -489,18 +489,18 @@ void CheckVenderCasa(){
         casawrite.areacon[strcspn(casawrite.areacon, "\n")] = 0;
 
         if(strcmp(casawrite.disp,"vender") == 0){
-        printf("Titulo: %s\n", casawrite.titulo);
-        printf("Rua: %s\n", casawrite.rua);
-        printf("Bairro: %s\n", casawrite.bairro);
-        printf("Cep: %s\n", casawrite.cep);
-        printf("Cidade: %s\n", casawrite.cidade);
-        printf("Andares: %s\n", casawrite.andares);
-        printf("Quartos: %s\n", casawrite.quartos);
-        printf("Valor: %s\n", casawrite.valor);
-        printf("Disponibilidade: %s\n", casawrite.disp);
-        printf("Area do terreno: %s\n", casawrite.areater);
-        printf("Area construida: %s\n", casawrite.areacon);
-        puts(" ");
+            printf("Titulo: %s\n", casawrite.titulo);
+            printf("Rua: %s\n", casawrite.rua);
+            printf("Bairro: %s\n", casawrite.bairro);
+            printf("Cep: %s\n", casawrite.cep);
+            printf("Cidade: %s\n", casawrite.cidade);
+            printf("Andares: %s\n", casawrite.andares);
+            printf("Quartos: %s\n", casawrite.quartos);
+            printf("Valor: %s\n", casawrite.valor);
+            printf("Disponibilidade: %s\n", casawrite.disp);
+            printf("Area do terreno: %s\n", casawrite.areater);
+            printf("Area construida: %s\n", casawrite.areacon);
+            puts(" ");
         }
     }
     fclose(fp);
@@ -543,20 +543,20 @@ void CheckVenderApt(){
         aptwrite.vagas[strcspn(aptwrite.vagas, "\n")] = 0;
 
         if(strcmp(aptwrite.disp,"vender") == 0){
-        printf("Titulo: %s\n", aptwrite.titulo);
-        printf("Rua: %s\n", aptwrite.rua);
-        printf("Bairro: %s\n", aptwrite.bairro);
-        printf("Cep: %s\n", aptwrite.cep);
-        printf("Cidade: %s\n", aptwrite.cidade);
-        printf("Andares: %s\n", aptwrite.andares);
-        printf("Quartos: %s\n", aptwrite.quartos);
-        printf("Valor: %s\n", aptwrite.valor);
-        printf("Disponibilidade: %s\n", aptwrite.disp);
-        printf("Area: %s\n", aptwrite.area);
-        printf("Posicao: %s\n", aptwrite.posicao);
-        printf("Valor do condominio: %s\n", aptwrite.valorcond);
-        printf("Vagas: %s\n", aptwrite.vagas);
-        puts(" ");
+            printf("Titulo: %s\n", aptwrite.titulo);
+            printf("Rua: %s\n", aptwrite.rua);
+            printf("Bairro: %s\n", aptwrite.bairro);
+            printf("Cep: %s\n", aptwrite.cep);
+            printf("Cidade: %s\n", aptwrite.cidade);
+            printf("Andares: %s\n", aptwrite.andares);
+            printf("Quartos: %s\n", aptwrite.quartos);
+            printf("Valor: %s\n", aptwrite.valor);
+            printf("Disponibilidade: %s\n", aptwrite.disp);
+            printf("Area: %s\n", aptwrite.area);
+            printf("Posicao: %s\n", aptwrite.posicao);
+            printf("Valor do condominio: %s\n", aptwrite.valorcond);
+            printf("Vagas: %s\n", aptwrite.vagas);
+            puts(" ");
         }
     }
     fclose(fp1);
@@ -589,15 +589,15 @@ void CheckVenderTer(){
         terwrite.disp[strcspn(terwrite.disp, "\n")] = 0;
 
         if(strcmp(terwrite.disp,"vender") == 0){
-        printf("Titulo: %s\n", terwrite.titulo);
-        printf("Rua: %s\n", terwrite.rua);
-        printf("Bairro: %s\n", terwrite.bairro);
-        printf("Cep: %s\n", terwrite.cep);
-        printf("Cidade: %s\n", terwrite.cidade);
-        printf("Area: %s\n", terwrite.area);
-        printf("Valor: %s\n", terwrite.valor);
-        printf("Disponibilidade: %s\n", terwrite.disp);
-        puts(" ");
+            printf("Titulo: %s\n", terwrite.titulo);
+            printf("Rua: %s\n", terwrite.rua);
+            printf("Bairro: %s\n", terwrite.bairro);
+            printf("Cep: %s\n", terwrite.cep);
+            printf("Cidade: %s\n", terwrite.cidade);
+            printf("Area: %s\n", terwrite.area);
+            printf("Valor: %s\n", terwrite.valor);
+            printf("Disponibilidade: %s\n", terwrite.disp);
+            puts(" ");
         }
     }
     fclose(fp2);
@@ -667,14 +667,52 @@ void ConsultaTodosImoveis(){
 
 }
 
-void CheckVender(){
+int CheckVender(){
 
-    CheckVenderCasa();
-    CheckVenderApt();
-    CheckVenderTer();
-    printf("Pressione ENTER para continuar");
-    getchar();
-    system(CLEARTERM);
+    char option;
+
+    while(1){
+
+        printf("1.Casa\n"
+                "2.Apartamento\n"
+                "3.Terreno\n"
+                "0.Sair\n"
+                "Opcao: ");
+        option = getchar();
+        getchar();
+
+        switch(option){
+            case 48:
+                system(CLEARTERM);
+                return 0;
+                break;
+            case 49:
+                system(CLEARTERM);
+                CheckVenderCasa();
+                printf("Pressione ENTER para continuar");
+                getchar();
+                system(CLEARTERM);
+                break;
+            case 50:
+                system(CLEARTERM);
+                CheckVenderApt();
+                printf("Pressione ENTER para continuar");
+                getchar();
+                system(CLEARTERM);
+                break;
+            case 51:
+                system(CLEARTERM);
+                CheckVenderTer();
+                printf("Pressione ENTER para continuar");
+                getchar();
+                system(CLEARTERM);
+                break;
+            default:
+                system(CLEARTERM);
+                printf("Erro\n");
+                break;
+        }
+    }
 }
 
 int main(){
