@@ -216,7 +216,7 @@ void LerTodoCasa(){
 
     int c;
 
-    fp = fopen("dadoscasa.txt", "r");
+    fp = fopen("dadoscasa.txt", "a");
 
     while((c = fgetc(fp) != EOF)){
 
@@ -263,7 +263,7 @@ void LerTodoApt(){
 
     int c;
 
-    fp1 = fopen("dadosapt.txt", "r");
+    fp1 = fopen("dadosapt.txt", "a");
 
     while((c = fgetc(fp1) != EOF)){
 
@@ -316,7 +316,7 @@ void LerTodoTer(){
 
     int c;
 
-    fp2 = fopen("dadoster.txt", "r");
+    fp2 = fopen("dadoster.txt", "a");
 
     while((c = fgetc(fp2) != EOF)){
 
@@ -355,7 +355,7 @@ void LerTituloCasa(){
 
     int c;
 
-    fp = fopen("dadoscasa.txt", "r");
+    fp = fopen("dadoscasa.txt", "a");
 
     while((c = fgetc(fp) != EOF)){
 
@@ -392,7 +392,7 @@ void LerTituloApt(){
 
     int c;
 
-    fp1 = fopen("dadosapt.txt", "r");
+    fp1 = fopen("dadosapt.txt", "a");
 
     while((c = fgetc(fp1) != EOF)){
 
@@ -433,7 +433,7 @@ void LerTituloTer(){
 
     int c;
 
-    fp2 = fopen("dadoster.txt", "r");
+    fp2 = fopen("dadoster.txt", "a");
 
     while((c = fgetc(fp2) != EOF)){
 
@@ -464,7 +464,7 @@ void CheckVenderCasa(){
 
     int c;
 
-    fp = fopen("dadoscasa.txt", "r");
+    fp = fopen("dadoscasa.txt", "a");
 
     while((c = fgetc(fp) != EOF)){
 
@@ -514,7 +514,7 @@ void CheckVenderApt(){
 
     int c;
 
-    fp1 = fopen("dadosapt.txt", "r");
+    fp1 = fopen("dadosapt.txt", "a");
 
     while((c = fgetc(fp1) != EOF)){
 
@@ -570,7 +570,7 @@ void CheckVenderTer(){
 
     int c;
 
-    fp2 = fopen("dadoster.txt", "r");
+    fp2 = fopen("dadoster.txt", "a");
 
     while((c = fgetc(fp2) != EOF)){
 
@@ -611,7 +611,7 @@ void CheckBairroVenderCasa(){
 
     int c;
 
-    fp = fopen("dadoscasa.txt", "r");
+    fp = fopen("dadoscasa.txt", "a");
 
     while((c = fgetc(fp) != EOF)){
 
@@ -663,7 +663,7 @@ void CheckBairroVenderApt(){
 
     int c;
 
-    fp1 = fopen("dadosapt.txt", "r");
+    fp1 = fopen("dadosapt.txt", "a");
 
     while((c = fgetc(fp1) != EOF)){
 
@@ -721,7 +721,7 @@ void CheckBairroVenderTer(){
 
     int c;
 
-    fp2 = fopen("dadoster.txt", "r");
+    fp2 = fopen("dadoster.txt", "a");
 
     while((c = fgetc(fp2) != EOF)){
 
@@ -764,7 +764,7 @@ void CheckCidadeCasa(){
 
     int c;
 
-    fp = fopen("dadoscasa.txt", "r");
+    fp = fopen("dadoscasa.txt", "a");
 
     while((c = fgetc(fp) != EOF)){
 
@@ -814,7 +814,7 @@ void CheckCidadeApt(){
 
     int c;
 
-    fp1 = fopen("dadosapt.txt", "r");
+    fp1 = fopen("dadosapt.txt", "a");
 
     while((c = fgetc(fp1) != EOF)){
 
@@ -870,7 +870,7 @@ void CheckCidadeTer(){
 
     int c;
 
-    fp2 = fopen("dadoster.txt", "r");
+    fp2 = fopen("dadoster.txt", "a");
 
     while((c = fgetc(fp2) != EOF)){
 
@@ -911,7 +911,7 @@ void CheckBairroAlugarCasa(){
 
     int c;
 
-    fp = fopen("dadoscasa.txt", "r");
+    fp = fopen("dadoscasa.txt", "a");
 
     while((c = fgetc(fp) != EOF)){
 
@@ -963,7 +963,7 @@ void CheckBairroAlugarApt(){
 
     int c;
 
-    fp1 = fopen("dadosapt.txt", "r");
+    fp1 = fopen("dadosapt.txt", "a");
 
     while((c = fgetc(fp1) != EOF)){
 
@@ -1021,7 +1021,7 @@ void CheckBairroAlugarTer(){
 
     int c;
 
-    fp2 = fopen("dadoster.txt", "r");
+    fp2 = fopen("dadoster.txt", "a");
 
     while((c = fgetc(fp2) != EOF)){
 
@@ -1064,7 +1064,7 @@ void CheckAlugarCasa(){
 
     int c;
 
-    fp = fopen("dadoscasa.txt", "r");
+    fp = fopen("dadoscasa.txt", "a");
 
     while((c = fgetc(fp) != EOF)){
 
@@ -1114,7 +1114,7 @@ void CheckAlugarApt(){
 
     int c;
 
-    fp1 = fopen("dadosapt.txt", "r");
+    fp1 = fopen("dadosapt.txt", "a");
 
     while((c = fgetc(fp1) != EOF)){
 
@@ -1170,7 +1170,7 @@ void CheckAlugarTer(){
 
     int c;
 
-    fp2 = fopen("dadoster.txt", "r");
+    fp2 = fopen("dadoster.txt", "a");
 
     while((c = fgetc(fp2) != EOF)){
 
