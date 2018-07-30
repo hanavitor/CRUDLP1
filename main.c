@@ -1426,7 +1426,6 @@ int main(){
 
     system(CLEARTERM);
 
-    int flag = 1;
     char option;
 
     while(1){
@@ -1448,6 +1447,7 @@ int main(){
 
         switch(option){
             case 48:
+                system(CLEARTERM);
                 return 1;
                 break;
             case 49:
